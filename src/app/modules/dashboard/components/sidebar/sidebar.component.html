@@ -1,0 +1,74 @@
+
+  <ul nz-menu nzMode="inline">
+    <li
+    nz-menu-item
+    nz-tooltip
+    nzTooltipPlacement="right"
+    nzSelected
+    routerLink="home"
+    >
+    <span nz-icon  nzType="home" nzTheme="outline"></span>
+      <span>
+         Home
+      </span>
+    </li>
+
+    <li
+      nz-menu-item
+      routerLink="accionistas"
+      nzTitle="Accionistas"
+      nzIcon="usergroup-add"
+
+    >
+    <span nz-icon nzType="usergroup-add" nzTheme="outline"></span>
+      Accionistas
+    </li>
+
+    <li nz-menu-item routerLink="titulos" nzTitle="Titulos" nzIcon="file">Titulos</li>
+
+    <li nz-submenu nzTitle="Dividendos" nzIcon="appstore">
+      <ul>
+        <li nz-menu-item>Generacion de dividendos</li>
+        <li nz-menu-item>pago de dividendos</li>
+        <li nz-menu-item>parte de dividendos</li>
+        <li nz-menu-item>Revercion de dividendos</li>
+      </ul>
+    </li>
+
+    <li nz-submenu nzTitle="Devolucion" nzIcon="appstore">
+      <ul>
+        <li nz-menu-item>Reportes</li>
+        <li nz-menu-item>Pagos</li>
+        <li nz-submenu nzTitle="Submenu">
+          <ul>
+            <li nz-menu-item>Configuracion de reducciones</li>
+            <li nz-menu-item>Generacion de reduccion de capital</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li nz-submenu nzTitle="Junta" nzIcon="appstore">
+      <ul>
+        <li nz-menu-item>Apoderados</li>
+        <li nz-menu-item>asistentes a la junta</li>
+      </ul>
+    </li>
+
+    <li nz-submenu nzTitle="Listados" nzIcon="setting">
+      <ul>
+        <li nz-menu-item>Option 9</li>
+        <li nz-menu-item>Option 10</li>
+        <li nz-menu-item>Option 11</li>
+      </ul>
+    </li>
+
+    <li nz-submenu nzTitle="configuracion" nzIcon="setting">
+      <ul>
+        <li nz-menu-item>Option 9</li>
+        <li nz-menu-item>Option 10</li>
+        <li nz-menu-item>Option 11</li>
+      </ul>
+    </li>
+  </ul>
+

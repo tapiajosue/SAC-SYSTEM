@@ -1,0 +1,27 @@
+
+<div class="card" style="height: 95% !important;">
+  <div class="card-header" style="background-color: rgb(227, 247, 247);">
+    <h4 class="card-title">accionistas</h4>
+  </div>
+  <div class="container" >
+
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" style="margin: 2px;" nz-input placeholder="Buscar..." />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <span nz-icon nzType="search"></span>
+    </ng-template>
+
+  </div>
+  <div class="list" >
+    <nz-table #basicTable [nzData]="listOfData">
+      <thead>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.name }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
