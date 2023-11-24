@@ -1,55 +1,83 @@
-<div class="card card-user" style="height: 100% !important;">
+<div class="card card-user" style="height: 100% !important">
   <div class="card-header">
     <h5 class="card-title">Administrador de datos del accionista</h5>
   </div>
-  <div class="card-body">
 
-    <form>
+  <div class="card-body">
+    <!--  de aqui inicia los campos del formulario -->
+    <form [formGroup]="crudForm" (ngSubmit)="onSave()" autocomplete="off">
+      <!-- campos de nombre primera linea -->
       <div class="row">
         <div class="col-md-5 pr-10">
           <div class="form-group">
             <label>Apellido paterno</label>
-            <input type="text" class="form-control" placeholder="apellido paterno" value="Tapia">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="paternal_surname"
+              placeholder="apellido paterno"
+            />
+            <span class="form-text text-danger">
+              El campo debe de ser 0 o mayor
+          </span>
           </div>
         </div>
+
         <div class="col-md-3 px-1">
           <div class="form-group">
             <label>Apellido Materno</label>
-            <input type="text" class="form-control" placeholder="apellido materno" value="Basualto">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="maternal_surname"
+              placeholder="apellido materno"
+            />
           </div>
         </div>
+
         <div class="col-md-4 pl-1">
           <div class="form-group">
             <label for="exampleInputEmail1">nombre</label>
-            <input type="text" class="form-control" placeholder="nombre" value="Josue">
+            <input type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="nombre" />
           </div>
         </div>
       </div>
+
+      <!-- Segunda fila seccion documentos -->
       <div class="row">
         <div class="col-md-6 pr-1">
           <div class="form-group">
             <label>Numero de documento</label>
-            <input type="number" class="form-control" placeholder="telefono" value="75909704">
+            <input type="number" class="form-control" placeholder="telefono" />
           </div>
         </div>
 
         <div class="col-md-6 pl-1">
           <div class="form-group">
             <label>tipo de documento</label>
-              <select class="form-select" aria-label="Default select example">
-                  <option selected="">Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
+            <select class="form-select" aria-label="Default select example">
+              <option selected="">Seleccione el tipo de documento</option>
+              <option value="1">CI</option>
+              <option value="2">Pasaporte</option>
+              <option value="3">Carnet de bacunacion</option>
+            </select>
           </div>
         </div>
       </div>
+      <!-- tercera fila Direcciones -->
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
             <label>Direccion</label>
-            <input type="text" class="form-control" placeholder="Direccion" value="Cochabamba, Sipe sipe">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Direccion"
+              value="Cochabamba, Sipe sipe"
+            />
           </div>
         </div>
       </div>
@@ -58,114 +86,147 @@
         <div class="col-md-3 pr-1">
           <div class="form-group">
             <label>edificio</label>
-            <input type="text" class="form-control" placeholder="Edificio" value=" ">
+            <input type="text" class="form-control" placeholder="Edificio" />
           </div>
         </div>
         <div class="col-md-2 pr-1">
           <div class="form-group">
             <label>numero</label>
-            <input type="text" class="form-control" placeholder="numero de residencia" value="4126">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="numero de residencia"
+            />
           </div>
         </div>
         <div class="col-md-2 px-1">
           <div class="form-group">
             <label>piso</label>
-            <input type="number" class="form-control" placeholder="numero de piso" value="2">
+            <input
+              type="number"
+              class="form-control"
+              placeholder="numero de piso"
+            />
           </div>
         </div>
         <div class="col-md-3 pl-1">
           <div class="form-group">
             <label>Departamento</label>
-            <input type="number" class="form-control" placeholder="Departamento" value="2">
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Departamento"
+              value="2"
+            />
           </div>
         </div>
       </div>
+      <!-- cuarta fila contacto -->
+      <div class="row">
+        <div class="col-md-3 pr-1">
+          <div class="form-group">
+            <label>Folio</label>
+            <input type="number" class="form-control" placeholder="Folio" />
+          </div>
+        </div>
 
-    <div class="row">
-      <div class="col-md-3 pr-1">
-        <div class="form-group">
-          <label>Folio</label>
-          <input type="number" class="form-control" placeholder="Folio" value="736">
+        <div class="col-md-3 pr-1">
+          <div class="form-group">
+            <label>Telefono</label>
+            <input type="number" class="form-control" placeholder="telefono" />
+          </div>
+        </div>
+
+        <div class="col-md-3 pr-1">
+          <div class="form-group">
+            <label>Fax</label>
+            <input type="text" class="form-control" placeholder="Fax" />
+          </div>
         </div>
       </div>
+      <!--  quinta fila, seguimos con contacto -->
+      <div class="row">
+        <div class="col-md-4 pr-1">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" />
+          </div>
+        </div>
 
-      <div class="col-md-3 pr-1">
-        <div class="form-group">
-          <label>Telefono</label>
-          <input type="number" class="form-control" placeholder="telefono" value="75909704">
+        <div class="col-md-4 pr-1">
+          <div class="form-group">
+            <label>Casilla de correo</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Casilla de Correo"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-4 pr-1">
+          <div class="form-group">
+            <label>Empresa</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected="">Seleccione la empresa</option>
+              <option value="1">Ende</option>
+              <option value="2">Elfec</option>
+              <option value="3">Integra</option>
+              <option value="4">Particular</option>
+            </select>
+          </div>
         </div>
       </div>
+      <!--  datos extra -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-5 pr-1">
+            <div class="form-group">
+              <label>fecha alta</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Fecha alta"
+              />
+            </div>
+          </div>
 
-      <div class="col-md-3 pr-1">
-        <div class="form-group">
-          <label>Fax</label>
-          <input type="text" class="form-control" placeholder="Fax" value=" ">
+          <div class="col-md-5 pr-1">
+            <div class="form-group">
+              <label>usuario que le dio el alta</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Usuario alta"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4 pr-1">
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" class="form-control" placeholder="Email">
-        </div>
-      </div>
-      <div class="col-md-4 pr-1">
-        <div class="form-group">
-          <label>Casilla de correo</label>
-          <input type="text" class="form-control" placeholder="Casilla de Correo" value=" 456 ">
-        </div>
-      </div>
-      <div class="col-md-4 pr-1">
-        <div class="form-group">
-          <label>Empresa</label>
-          <select class="form-select" aria-label="Default select example">
-            <option selected="">Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        </div>
+        <div class="col-md-6"></div>
       </div>
 
-    </div>
-<div class="row">
-  <div class="col-md-6">
- <div class="col-md-5 pr-1">
-        <div class="form-group">
-          <label>fecha alta</label>
-          <input type="text" class="form-control" placeholder="Fecha alta" value="10/10/2023">
-        </div>
-      </div>
+      <div class="row" style="margin: 10px">
 
-      <div class="col-md-5 pr-1">
-        <div class="form-group">
-          <label>usuario que le dio el alta</label>
-          <input type="text" class="form-control" placeholder="Usuario alta" value="juan peres">
-        </div>
-      </div>
-
-
-  </div>
-  <div class="col-md-6">
-
-
-  </div>
-
-
-      <div  class="row  " style="margin: 10px; ">
         <div class="update ml-auto mr-auto col-2">
-          <button type="submit" class="btn btn-success btn-round">guardar</button>
+          <button type="submit"
+          class="btn btn-success btn-round">
+            guardar
+          </button>
         </div>
-        <div class="update ml-auto mr-auto col-2  " >
-          <button type="submit" class="btn btn-warning btn-round" >Modificar</button>
+
+        <div class="update ml-auto mr-auto col-2">
+          <button type="submit" class="btn btn-warning btn-round">
+            Modificar
+          </button>
         </div>
-        <div class="update ml-auto mr-auto col-2 ">
-          <button type="submit" class="btn btn-danger btn-round">Eliminar</button>
+        <div class="update ml-auto mr-auto col-2">
+          <button type="submit" class="btn btn-danger btn-round">
+            Eliminar
+          </button>
         </div>
       </div>
-    </div>
+
     </form>
   </div>
 </div>
