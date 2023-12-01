@@ -30,3 +30,8 @@ nz-breadcrumb {
 nz-footer {
   text-align: center;
 }
+
+.bolded {
+  font-weight: bold;
+}
+

@@ -1,35 +1,10 @@
-<div class="col-12 row" style="height: 30px">
-  <ul nz-menu nzMode="horizontal">
-    <li nz-menu-item>
-      <span nz-icon nzType="enter" nzTheme="outline"></span>
-      Tipo documento
-    </li>
+<ul nz-menu nzMode="horizontal" style="width: 100%">
+  <li nz-menu-item routerLink="tipo doc">Tipos de documento</li>
+  <li nz-menu-item routerLink="tipo acc">Tipos de accionista</li>
+  <li nz-menu-item routerLink="estado">Administrador de estados</li>
+  <li nz-menu-item routerLink="" >Historico de cambios</li>
+</ul>
 
-    <li nz-menu-item>
-      <span nz-icon nzType="enter" nzTheme="outline"></span>
-      Estado
-    </li>
-
-    <li nz-menu-item>
-      <span nz-icon nzType="enter" nzTheme="outline"></span>
-      Historico de cambios
-    </li>
-  </ul>
-</div>
-
-<div
-  class="col-12 row"
-  style="height: 86vh; background-color: rgb(230, 230, 245)"
->
-  <body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-cssgrid">
-    <div class="row" style="height: 100% !important">
-      <div class="col-4" style="background-color: beige">
-        <app-table-page></app-table-page>
-      </div>
-
-      <div class="col-md-7" style="background-color: bisque;">
-        <app-crud-page></app-crud-page>
-      </div>
-    </div>
-  </body>
+<div class="row" style="height: 100% !important">
+  <router-outlet></router-outlet>
 </div>

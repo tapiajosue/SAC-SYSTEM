@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -14,9 +15,13 @@ import {
 import {
   TablePageComponent,
 } from './components/table-page/table-page.component';
+import { AdminAccComponent } from './pages/admin-acc/admin-acc.component';
 import {
   ShareholdersPageComponent,
 } from './pages/shareholders-page/shareholders-page.component';
+import { TypeAccComponent } from './pages/type-acc/type-acc.component';
+import { TypeDocComponent } from './pages/type-doc/type-doc.component';
+import { TypeStateComponent } from './pages/type-state/type-state.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +30,18 @@ import {
     CrudPageComponent,
     TablePageComponent,
     NewCrudPageComponent,
+
+    TypeAccComponent,
+    TypeDocComponent,
+    TypeStateComponent,
+    AdminAccComponent,
+
+
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterOutlet,
 
     NzTableModule,
     NzInputModule,

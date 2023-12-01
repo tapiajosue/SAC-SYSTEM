@@ -1,5 +1,5 @@
 
-  <ul nz-menu nzMode="inline">
+  <ul nz-menu  nzMode="inline" nzTheme="dark" style="background-color:#1A468D;">
     <li
     nz-menu-item
     nz-tooltip
@@ -8,8 +8,8 @@
     routerLink="home"
     >
     <span nz-icon  nzType="home" nzTheme="outline"></span>
-      <span>
-         Home
+      <span >
+        Home
       </span>
     </li>
 
@@ -21,10 +21,24 @@
 
     >
     <span nz-icon nzType="usergroup-add" nzTheme="outline"></span>
-      Accionistas
-    </li>
+      <span>
+        Accionistas
+      </span>
 
-    <li nz-menu-item routerLink="titulos" nzTitle="Titulos" nzIcon="file">Titulos</li>
+    </li>
+    <li
+    nz-menu-item
+    routerLink="accionistas"
+    nzTitle="Accionistas"
+    nzIcon="files"
+  >
+  <i nz-icon nzType="file" nzTheme="outline"></i>
+    <span>
+      Titulos
+    </span>
+
+  </li>
+
 
     <li nz-submenu nzTitle="Dividendos" nzIcon="appstore">
       <ul>
@@ -70,5 +84,11 @@
         <li nz-menu-item>Option 11</li>
       </ul>
     </li>
+
+    <li nz-menu-item>
+      <i nz-icon nzType="file"></i>
+      <span>File</span>
+    </li>
+
   </ul>
 

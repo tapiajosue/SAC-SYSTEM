@@ -1,4 +1,41 @@
-<div class="col-12 row" style="padding: auto;">
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" style="background-color:#1A468D;">
+    <div class="logo" >
+      <img src="assets/logo-elfec1.png" alt="">
+    </div>
+    <app-sidebar></app-sidebar>
+  </nz-sider>
+  <nz-layout>
+
+
+    <nz-header>
+      <i
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></i>
+
+    </nz-header>
+
+    <nz-content>
+     <router-outlet></router-outlet>
+    </nz-content>
+
+    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="col-12 row" style="padding: auto;">
   <div class="col-2" >
     <div class="logo">
        <img src="assets/logo-elfec1.png" alt="">
@@ -14,7 +51,7 @@
     </div>
 
     <br />
-    <!-- <div class="col-12" style="background-color: aqua; height: 90vh;"> -->
+
     <div class="col-12 row" style="position: fixed; height: 90vh; background-color: aquamarine; ">
     <router-outlet></router-outlet>
     </div>
@@ -24,4 +61,4 @@
 
 <div class="col-12">
   <app-footer></app-footer>
-</div>
+</div> -->

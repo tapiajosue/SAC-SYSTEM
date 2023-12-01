@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 import { ShareholdersModule } from '../shareholders/shareholders.module';
@@ -24,7 +25,8 @@ import { DashboardComponent } from './dashboard.component';
     ShareholdersModule,
 
     NzMenuModule,
-    NzIconModule
+    NzIconModule,
+    NzLayoutModule
   ],
   exports: [
     DashboardComponent,
