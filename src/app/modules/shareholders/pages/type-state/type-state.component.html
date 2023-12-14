@@ -1,1 +1,48 @@
-<p>type-state works!</p>
+<div class="container text-center mt-4" style="">
+  <h1>Administrador de estados</h1>
+  <p>puede administrar los diferentes tipos de estados de un accionista.</p>
+</div>
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-md-3 px-1">
+    <div class="form-group">
+      <label>Registre nuevo tipo de estado</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="tipo_doc"
+        placeholder="Tipo de documento"
+      />
+    </div>
+  </div>
+  <div class="col-3" style="margin: 25px">
+    <button nz-button nzType="primary">Primary Button</button>
+  </div>
+</div>
+<div>
+  <nz-table #basicTable [nzData]="listOfData" style="margin: 20px;">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tipo de estado de accionistas</th>
+        <th>Estado del tipo</th>
+        <th>campo3</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.key }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.estado }}</td>
+        <td>{{ data.address }}</td>
+        <td>
+          <a>Action 一 {{ data.name }}</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

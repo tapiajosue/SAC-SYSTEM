@@ -5,10 +5,11 @@ import {
 } from '@angular/router';
 
 import {
+  CrudPageComponent,
+} from './pages/admin-acc/components/crud-page/crud-page.component';
+import {
   ShareholdersPageComponent,
 } from './pages/shareholders-page/shareholders-page.component';
-import { TypeAccComponent } from './pages/type-acc/type-acc.component';
-import { TypeDocComponent } from './pages/type-doc/type-doc.component';
 import { TypeStateComponent } from './pages/type-state/type-state.component';
 
 const routes: Routes = [
@@ -16,9 +17,15 @@ const routes: Routes = [
      path: '',
      component: ShareholdersPageComponent,
      children:[
-       {path: 'tipo doc', component: TypeDocComponent},
-       {path: 'tipo acc', component:TypeAccComponent},
-       {path: 'tipo estado', component:TypeStateComponent},
+
+       {path: 'admin', loadChildren: () => import('./pages/admin-acc/admin-acc.module').then(m => m.AdminAccModule) },
+       {path: 'tipodoc', loadChildren: () => import('./pages/type-doc/type-doc.module').then(m => m.TypeDocModule) },
+       {path: 'tipoacc', loadChildren: () => import('./pages/type-acc/type-acc.module').then(m => m.TypeAccModule) },
+       {path: 'estado', component:TypeStateComponent},
+
+
+       //no funciono cargar la pagina asi
+       {path: 'crudpage', component:CrudPageComponent},
        {path: '**', redirectTo:''}
      ]
    },

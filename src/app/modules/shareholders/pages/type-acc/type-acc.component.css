@@ -1,0 +1,9 @@
+button {
+  margin-right: 8px;
+
+}
+.boton-verde {
+background-color: #52C41A; /* Puedes cambiar "green" por el color que desees */
+border-color: #52C41A;     /* Cambia también el color del borde si es necesario */
+color: white;
+}

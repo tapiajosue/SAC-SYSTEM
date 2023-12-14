@@ -4,13 +4,6 @@ import {
   Routes,
 } from '@angular/router';
 
-import { HomePageComponent } from '../home/pages/home-page/home-page.component';
-import {
-  ShareholdersPageComponent,
-} from '../shareholders/pages/shareholders-page/shareholders-page.component';
-import {
-  TitlesPageComponent,
-} from '../titles/pages/titles-page/titles-page.component';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
@@ -18,10 +11,18 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children:[
-      {path: 'home', component: HomePageComponent},
-      {path: 'accionistas', component:ShareholdersPageComponent},
-      {path: 'titulos', component:TitlesPageComponent},
-      {path: '**', redirectTo:'home'}
+      { path:'home',
+        loadChildren: () => import('../home/home.module').then( m => m.HomeModule)},
+      { path:'accionistas',
+        loadChildren: () => import('../shareholders/shareholders.module').then( m => m.ShareholdersModule)},
+      { path:'titulos',
+        loadChildren: () => import('../titles/titles.module').then( m => m.TitlesModule)},
+
+
+      // {path: 'home', component: HomePageComponent},
+      // {path: 'accionistas', component:ShareholdersPageComponent},
+      // {path: 'titulos', component:TitlesPageComponent},
+      // {path: '**', redirectTo:'home'}
     ]
   },
 

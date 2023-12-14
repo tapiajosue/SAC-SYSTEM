@@ -1,4 +1,4 @@
-<div class="card card-user" style="height: 100% !important">
+<div class="card card-user" style="height: 100% !important; margin-right: 5px;">
   <div class="card-header">
     <h5 class="card-title">Administrador de datos del accionista</h5>
   </div>
@@ -8,7 +8,7 @@
     <form [formGroup]="crudForm" (ngSubmit)="onSave()" autocomplete="off">
       <!-- campos de nombre primera linea -->
       <div class="row">
-        <div class="col-md-5 pr-10">
+        <div class="col-md-4 pr-10">
           <div class="form-group">
             <label>Apellido paterno</label>
             <input
@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <div class="col-md-3 px-1">
+        <div class="col-md-4 px-1">
           <div class="form-group">
             <label>Apellido Materno</label>
             <input
@@ -48,14 +48,14 @@
 
       <!-- Segunda fila seccion documentos -->
       <div class="row">
-        <div class="col-md-6 pr-1">
+        <div class="col-md-4 pr-1">
           <div class="form-group">
             <label>Numero de documento</label>
-            <input type="number" class="form-control" placeholder="telefono" />
+            <input type="number" class="form-control" placeholder="numero de documento" />
           </div>
         </div>
 
-        <div class="col-md-6 pl-1">
+        <div class="col-md-4 pl-1">
           <div class="form-group">
             <label>tipo de documento</label>
             <select class="form-select" aria-label="Default select example">
@@ -64,6 +64,12 @@
               <option value="2">Pasaporte</option>
               <option value="3">Carnet de bacunacion</option>
             </select>
+          </div>
+        </div>
+        <div class="col-md-4 pr-1">
+          <div class="form-group">
+            <label>Expedito</label>
+            <input type="estring" class="form-control" placeholder="Expedito" />
           </div>
         </div>
       </div>
@@ -76,7 +82,6 @@
               type="text"
               class="form-control"
               placeholder="Direccion"
-              value="Cochabamba, Sipe sipe"
             />
           </div>
         </div>
@@ -89,17 +94,17 @@
             <input type="text" class="form-control" placeholder="Edificio" />
           </div>
         </div>
-        <div class="col-md-2 pr-1">
+        <div class="col-md-3 pr-1">
           <div class="form-group">
             <label>numero</label>
             <input
               type="text"
               class="form-control"
-              placeholder="numero de residencia"
+              placeholder="de residencia"
             />
           </div>
         </div>
-        <div class="col-md-2 px-1">
+        <div class="col-md-3 px-1">
           <div class="form-group">
             <label>piso</label>
             <input
@@ -123,21 +128,21 @@
       </div>
       <!-- cuarta fila contacto -->
       <div class="row">
-        <div class="col-md-3 pr-1">
+        <div class="col-md-4 pr-1">
           <div class="form-group">
             <label>Folio</label>
             <input type="number" class="form-control" placeholder="Folio" />
           </div>
         </div>
 
-        <div class="col-md-3 pr-1">
+        <div class="col-md-4 pr-1">
           <div class="form-group">
             <label>Telefono</label>
             <input type="number" class="form-control" placeholder="telefono" />
           </div>
         </div>
 
-        <div class="col-md-3 pr-1">
+        <div class="col-md-4 pr-1">
           <div class="form-group">
             <label>Fax</label>
             <input type="text" class="form-control" placeholder="Fax" />
@@ -179,7 +184,7 @@
       </div>
       <!--  datos extra -->
       <div class="row">
-        <div class="col-md-6">
+
           <div class="col-md-5 pr-1">
             <div class="form-group">
               <label>fecha alta</label>
@@ -201,9 +206,7 @@
               />
             </div>
           </div>
-        </div>
 
-        <div class="col-md-6"></div>
       </div>
 
       <div class="row" style="margin: 10px">

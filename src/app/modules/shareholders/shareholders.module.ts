@@ -1,27 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzTableModule } from 'ng-zorro-antd/table';
+import { NgzorroModule } from 'src/app/shared/ngzorro.module.ts/ngzorro.module';
 
-import { CrudPageComponent } from './components/crud-page/crud-page.component';
+import {
+  CrudPageComponent,
+} from './pages/admin-acc/components/crud-page/crud-page.component';
 import {
   NewCrudPageComponent,
-} from './components/new-crud-page/new-crud-page.component';
+} from './pages/admin-acc/components/new-crud-page/new-crud-page.component';
 import {
   TablePageComponent,
-} from './components/table-page/table-page.component';
-import { AdminAccComponent } from './pages/admin-acc/admin-acc.component';
+} from './pages/admin-acc/components/table-page/table-page.component';
 import {
   ShareholdersPageComponent,
 } from './pages/shareholders-page/shareholders-page.component';
-import { TypeAccComponent } from './pages/type-acc/type-acc.component';
-import { TypeDocComponent } from './pages/type-doc/type-doc.component';
 import { TypeStateComponent } from './pages/type-state/type-state.component';
+import { ShareholdersRoutingModule } from './shareholders-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,23 +31,28 @@ import { TypeStateComponent } from './pages/type-state/type-state.component';
     TablePageComponent,
     NewCrudPageComponent,
 
-    TypeAccComponent,
-    TypeDocComponent,
+
     TypeStateComponent,
-    AdminAccComponent,
+
+
+
 
 
   ],
+  // no olvides importar el routing para que todo funcione
   imports: [
+    ShareholdersRoutingModule,
     CommonModule,
     ReactiveFormsModule,
     RouterOutlet,
+    FormsModule,
+NgzorroModule,
 
-    NzTableModule,
-    NzInputModule,
-    NzMenuModule,
-    NzIconModule,
+
+
   ],
-  exports: [],
+  exports: [
+ShareholdersPageComponent
+  ],
 })
 export class ShareholdersModule {}

@@ -1,0 +1,71 @@
+
+<div class="card" style="height: 100% !important; margin: 5px;">
+  <div class="card-header" style="background-color: rgb(243, 243, 243);">
+    <h4 class="card-title text-center">Accionistas</h4>
+  </div>
+
+  <div class="container" style="margin-left: 5px;">
+
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text"  nz-input placeholder="Buscar..." />
+    </nz-input-group>
+
+
+    <ng-template #suffixIconSearch>
+      <span nz-icon nzType="search"></span>
+    </ng-template>
+  </div>
+
+
+  <div class="list" >
+    <nz-table #basicTable  style="margin: 20px;">
+      <thead>
+        <tr>
+          <th>nombre</th>
+          <th>apellido paterno</th>
+          <th>apellido materno</th>
+          <th>numero de documento</th>
+          <th>tipo doc</th>
+          <th>nit</th>
+          <th>pais</th>
+          <th>ciudad</th>
+          <th>direccion</th>
+          <th>numero</th>
+          <th>piso</th>
+          <th>departamento</th>
+
+          <th>telefono</th>
+
+          <th>Email</th>
+          <th>Empresa</th>
+          <th>Estado</th>
+          <th>fecha creacion</th>
+          <th>Usuario que dio alta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.nombres}}</td>
+          <td>{{ data.apellidos}}</td>
+          <td>{{ data.nro_documento}}</td>
+          <td>{{ data.tipo_documento_id}}</td>
+          <td>{{ data.nit}}</td>
+          <td>{{ data.pais}}</td>
+          <td>{{ data.ciudad}}</td>
+          <td>{{ data.direccion}}</td>
+          <td>{{ data.nro}}</td>
+          <td>{{ data.piso}}</td>
+          <td>{{ data.dpto}}</td>
+          <td>{{ data.telefono}}</td>
+          <td>{{ data.email}}</td>
+          <td>{{ data.empresa}}</td>
+          <td>{{ data.estado}}</td>
+          <td>{{ data.fecah_creacion}}</td>
+          <td>{{ data.aud_login}}</td>
+          <td>
+
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+</div>

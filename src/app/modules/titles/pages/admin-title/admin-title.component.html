@@ -1,0 +1,42 @@
+<div class="container text-center mt-4" >
+  <h1>Titulos</h1>
+
+</div>
+
+<!--  registro de nuevo tipo de documento -->
+<div class="row">
+  <div class="col-1"></div>
+
+  <div class="col-4" style="margin: 25px">
+    <button nz-button nzType="primary" >Nuevo titulo</button>
+  </div>
+
+<nz-table #basicTable [nzData]="TitlesData">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Accionista</th>
+      <th>Cantidad de acciones</th>
+      <th>valor</th>
+      <th>Tipo de accionista</th>
+      <th>Tipo de transferencia</th>
+      <th>Estado</th>
+      <th>Fecha de creacion</th>
+      <th>Fecha de modificacion</th>
+      <th>Usuario alta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.titulo }}</td>
+      <td>{{ data.accionista_id }}</td>
+      <td>{{ data.cantidad_acciones }}</td>
+      <td>{{ data.valor }}</td>
+      <td>{{ data.tipo_accionista_id }}</td>
+      <td>{{ data.tipo_transferencia_id }}</td>
+      <td>{{ data. estado}}</td>
+      <td>{{ data. fecha_creacion}}</td>
+      <td>{{ data. aud_login}}</td>
+    </tr>
+  </tbody>
+</nz-table>

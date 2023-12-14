@@ -1,0 +1,56 @@
+<div class="container" style="margin-top: 10%;">
+<div class="container text-center mt-4">
+  <div class="row">
+    <div class="col-8 ms-auto">
+      <div class="d-flex align-items-center">
+        <img
+          src="assets/logo-2.png"
+          alt="Logo 2"
+          class="img-fluid mr-5"
+          style="max-width: 90px"
+        />
+        <h1 style="margin-top: 14px;">ACCIONISTAS</h1>
+      </div>
+    </div>
+  </div>
+
+  <p>Al ingresar a este sistema, usted se compromete a cumplir con lo establecido en la política de seguridad de información de la empresa y certifica ser el usuario de ingreso</p>
+</div>
+
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-8">
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="¡Por favor ingrese su nombre de usuario!">
+      <nz-input-group nzPrefixIcon="user">
+        <input type="text" nz-input formControlName="userName" placeholder="Username" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="¡Por favor ingrese su contraseña!">
+      <nz-input-group nzPrefixIcon="lock">
+        <input type="password" nz-input formControlName="password" placeholder="Password" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <div nz-row class="login-form-margin">
+    <div nz-col [nzSpan]="12">
+      <label nz-checkbox formControlName="remember">
+        <span>Acuerdate de mi</span>
+      </label>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <a class="login-form-forgot">Has olvidado tu contraseña</a>
+    </div>
+  </div>
+  <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Iniciar secion</button>
+
+  <a>Registrate ahora!</a>
+</form>
+
+</div>
+
+</div>
+</div>

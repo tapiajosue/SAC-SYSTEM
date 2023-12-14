@@ -1,1 +1,60 @@
-<p>type-doc works!</p>
+<!-- Contenedor con título y contenido centrados -->
+<div class="container text-center mt-4" >
+  <h1>Tipos de documento</h1>
+  <p>puede administrar los diferentes tipos de documento.</p>
+</div>
+
+<!--  registro de nuevo tipo de documento -->
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-md-3 px-1">
+    <div class="form-group">
+      <label>Registre nuevo tipo de Documento</label>
+
+      <input
+        nz-input
+        type="text"
+        class="form-control"
+        formControlName="tipo_doc"
+        placeholder="Tipo de documento"
+        style="margin: 3px;"
+      />
+    </div>
+  </div>
+  <div class="col-3" style="margin: 25px">
+    <button nz-button nzType="primary" (click)="showConfirm()">Registrar</button>
+  </div>
+
+</div>
+<!-- tabla de muestra de datos de la tabla tipo de documento -->
+<div>
+  <nz-table #basicTable [nzData]="DataTypeDoc" style="margin: 20px;">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tipo documento</th>
+        <th>Estado</th>
+        <th>Fecha de creacion</th>
+        <th>Fecha de modificacion</th>
+
+        <th>Usuario alta</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.id }}</td>
+        <td>{{ data.tipo_documento }}</td>
+        <td>{{ data.estado }}</td>
+        <td>{{ data.fecha_creacion }}</td>
+        <td>{{ data.fecha_modificacion }}</td>
+
+        <td>{{ data.aud_login }}</td>
+        <td>
+          <button nz-button class="boton-verde" (click)="warning()">Modificar</button>
+          <button nz-button nzType="primary" nzDanger (click)="showDeleteConfirm()">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

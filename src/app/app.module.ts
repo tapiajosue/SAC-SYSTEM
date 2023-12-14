@@ -10,10 +10,10 @@ import {
   en_US,
   NZ_I18N,
 } from 'ng-zorro-antd/i18n';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgzorroModule } from './shared/ngzorro.module.ts/ngzorro.module';
 
 registerLocaleData(en);
 
@@ -29,7 +29,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
 
-    NzMenuModule
+    NgzorroModule,
 
   ],
   providers: [

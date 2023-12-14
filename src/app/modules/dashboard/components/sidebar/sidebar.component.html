@@ -1,94 +1,82 @@
-
-  <ul nz-menu  nzMode="inline" nzTheme="dark" style="background-color:#1A468D;">
-    <li
+<ul nz-menu nzMode="inline" nzTheme="dark" style="background-color: #1a468d">
+  <!-- <li
     nz-menu-item
     nz-tooltip
     nzTooltipPlacement="right"
     nzSelected
     routerLink="home"
-    >
-    <span nz-icon  nzType="home" nzTheme="outline"></span>
-      <span >
-        Home
-      </span>
-    </li>
+  >
+    <span nz-icon nzType="home" nzTheme="outline"></span>
+    <span> <strong> Home </strong></span>
+  </li> -->
 
-    <li
-      nz-menu-item
-      routerLink="accionistas"
-      nzTitle="Accionistas"
-      nzIcon="usergroup-add"
-
-    >
-    <span nz-icon nzType="usergroup-add" nzTheme="outline"></span>
-      <span>
-        Accionistas
-      </span>
-
-    </li>
-    <li
+  <li
     nz-menu-item
     routerLink="accionistas"
     nzTitle="Accionistas"
-    nzIcon="files"
+    nzIcon="usergroup-add"
   >
-  <i nz-icon nzType="file" nzTheme="outline"></i>
-    <span>
-      Titulos
-    </span>
-
+    <span nz-icon nzType="usergroup-add" nzTheme="outline"></span>
+    <span><strong> Accionistas </strong></span>
   </li>
 
+  <li
+    nz-menu-item
+    routerLink="titulos"
+    nzTitle="titulos"
+    nzIcon="files"
+  >
+    <i nz-icon nzType="file" nzTheme="outline"></i>
+    <span> <strong>Titulos</strong>  </span>
+  </li>
 
-    <li nz-submenu nzTitle="Dividendos" nzIcon="appstore">
-      <ul>
-        <li nz-menu-item>Generacion de dividendos</li>
-        <li nz-menu-item>pago de dividendos</li>
-        <li nz-menu-item>parte de dividendos</li>
-        <li nz-menu-item>Revercion de dividendos</li>
-      </ul>
-    </li>
+  <li nz-submenu nzTitle="Dividendos" nzIcon="appstore">
+    <ul style="background-color: #1a468d">
+      <li nz-menu-item>Generacion de dividendos</li>
+      <li nz-menu-item>pago de dividendos</li>
+      <li nz-menu-item>parte de dividendos</li>
+      <li nz-menu-item>Revercion de dividendos</li>
+    </ul>
+  </li>
+<hr>
+  <li nz-submenu nzTitle="Devolucion" nzIcon="appstore">
+    <ul>
+      <li nz-menu-item>Reportes</li>
+      <li nz-menu-item>Pagos</li>
+      <li nz-submenu nzTitle="Submenu">
+        <ul>
+          <li nz-menu-item>Configuracion de reducciones</li>
+          <li nz-menu-item>Generacion de reduccion de capital</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 
-    <li nz-submenu nzTitle="Devolucion" nzIcon="appstore">
-      <ul>
-        <li nz-menu-item>Reportes</li>
-        <li nz-menu-item>Pagos</li>
-        <li nz-submenu nzTitle="Submenu">
-          <ul>
-            <li nz-menu-item>Configuracion de reducciones</li>
-            <li nz-menu-item>Generacion de reduccion de capital</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+  <li nz-submenu nzTitle="Junta" nzIcon="appstore">
+    <ul>
+      <li nz-menu-item>Apoderados</li>
+      <li nz-menu-item>asistentes a la junta</li>
+    </ul>
+  </li>
 
-    <li nz-submenu nzTitle="Junta" nzIcon="appstore">
-      <ul>
-        <li nz-menu-item>Apoderados</li>
-        <li nz-menu-item>asistentes a la junta</li>
-      </ul>
-    </li>
+  <li nz-submenu nzTitle="Listados" nzIcon="setting">
+    <ul>
+      <li nz-menu-item>Option 9</li>
+      <li nz-menu-item>Option 10</li>
+      <li nz-menu-item>Option 11</li>
+    </ul>
+  </li>
 
-    <li nz-submenu nzTitle="Listados" nzIcon="setting">
-      <ul>
-        <li nz-menu-item>Option 9</li>
-        <li nz-menu-item>Option 10</li>
-        <li nz-menu-item>Option 11</li>
-      </ul>
-    </li>
+  <li nz-submenu nzTitle="configuracion" nzIcon="setting">
+    <ul>
+      <li nz-menu-item>Option 9</li>
+      <li nz-menu-item>Option 10</li>
+      <li nz-menu-item>Option 11</li>
+    </ul>
+  </li>
 
-    <li nz-submenu nzTitle="configuracion" nzIcon="setting">
-      <ul>
-        <li nz-menu-item>Option 9</li>
-        <li nz-menu-item>Option 10</li>
-        <li nz-menu-item>Option 11</li>
-      </ul>
-    </li>
-
-    <li nz-menu-item>
-      <i nz-icon nzType="file"></i>
-      <span>File</span>
-    </li>
-
-  </ul>
-
+  <li nz-menu-item>
+    <i nz-icon nzType="file"></i>
+    <span>File</span>
+  </li>
+</ul>
