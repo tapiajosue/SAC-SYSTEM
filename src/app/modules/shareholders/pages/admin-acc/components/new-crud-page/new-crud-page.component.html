@@ -1,169 +1,299 @@
-<div class="card card-user" style="height: 100% !important;">
-  <div class="card-header">
-    <h5 class="card-title">Administrador de datos del accionista</h5>
-  </div>
-  <div class="card-body">
+<nz-card
+  style="width: 80%; margin-left: 10%"
+  [nzBordered]="false"
+  nzTitle="Card title"
+>
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label nzRequired>Apellido paterno</nz-form-label>
+        <input
+          nz-input
+          formControlName="apPaterno"
+          placeholder="Apellido paterno"
+        />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
 
-    <form>
-      <div class="row">
-        <div class="col-md-5 pr-10">
-          <div class="form-group">
-            <label>Apellido paterno</label>
-            <input type="text" class="form-control" placeholder="apellido paterno" value="Tapia">
-          </div>
-        </div>
-        <div class="col-md-3 px-1">
-          <div class="form-group">
-            <label>Apellido Materno</label>
-            <input type="text" class="form-control" placeholder="apellido materno" value="Basualto">
-          </div>
-        </div>
-        <div class="col-md-4 pl-1">
-          <div class="form-group">
-            <label for="exampleInputEmail1">nombre</label>
-            <input type="text" class="form-control" placeholder="nombre" value="Josue">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 pr-1">
-          <div class="form-group">
-            <label>Numero de documento</label>
-            <input type="number" class="form-control" placeholder="telefono" value="75909704">
-          </div>
-        </div>
+      <nz-form-control
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label nzRequired>Apellido materno</nz-form-label>
+        <input
+          nz-input
+          formControlName="apMaterno"
+          placeholder="Apellido materno"
+        />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
 
-        <div class="col-md-6 pl-1">
-          <div class="form-group">
-            <label>tipo de documento</label>
-              <select class="form-select" aria-label="Default select example">
-                  <option selected="">Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label>Direccion</label>
-            <input type="text" class="form-control" placeholder="Direccion" value="Cochabamba, Sipe sipe">
-          </div>
-        </div>
-      </div>
+      <nz-form-control
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label nzRequired>Nombre</nz-form-label>
+        <input nz-input formControlName="nombres" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
 
-      <div class="row">
-        <div class="col-md-3 pr-1">
-          <div class="form-group">
-            <label>edificio</label>
-            <input type="text" class="form-control" placeholder="Edificio" value=" ">
-          </div>
-        </div>
-        <div class="col-md-2 pr-1">
-          <div class="form-group">
-            <label>numero</label>
-            <input type="text" class="form-control" placeholder="numero de residencia" value="4126">
-          </div>
-        </div>
-        <div class="col-md-2 px-1">
-          <div class="form-group">
-            <label>piso</label>
-            <input type="number" class="form-control" placeholder="numero de piso" value="2">
-          </div>
-        </div>
-        <div class="col-md-3 pl-1">
-          <div class="form-group">
-            <label>Departamento</label>
-            <input type="number" class="form-control" placeholder="Departamento" value="2">
-          </div>
-        </div>
-      </div>
+    <nz-form-item>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label nzRequired>numero de Docuemnto</nz-form-label>
 
-    <div class="row">
-      <div class="col-md-3 pr-1">
-        <div class="form-group">
-          <label>Folio</label>
-          <input type="number" class="form-control" placeholder="Folio" value="736">
-        </div>
-      </div>
+        <input nz-input formControlName="nro_documento" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
 
-      <div class="col-md-3 pr-1">
-        <div class="form-group">
-          <label>Telefono</label>
-          <input type="number" class="form-control" placeholder="telefono" value="75909704">
-        </div>
-      </div>
+      <nz-form-control [nzSpan]="12" nzHasFeedback>
+        <nz-form-label [nzSpan]="7" nzRequired>Tipo de documento</nz-form-label>
+        <nz-select name="select-error" [ngModel]="'Option 1'">
+          <nz-option nzValue="Option 1" nzLabel="Option 1"></nz-option>
+          <nz-option nzValue="Option 2" nzLabel="Option 2"></nz-option>
+        </nz-select>
+      </nz-form-control>
 
-      <div class="col-md-3 pr-1">
-        <div class="form-group">
-          <label>Fax</label>
-          <input type="text" class="form-control" placeholder="Fax" value=" ">
-        </div>
-      </div>
-    </div>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7">Expedito</nz-form-label>
+        <input nz-input formControlName="nro_documento" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
 
-    <div class="row">
-      <div class="col-md-4 pr-1">
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" class="form-control" placeholder="Email">
-        </div>
-      </div>
-      <div class="col-md-4 pr-1">
-        <div class="form-group">
-          <label>Casilla de correo</label>
-          <input type="text" class="form-control" placeholder="Casilla de Correo" value=" 456 ">
-        </div>
-      </div>
-      <div class="col-md-4 pr-1">
-        <div class="form-group">
-          <label>Empresa</label>
-          <select class="form-select" aria-label="Default select example">
-            <option selected="">Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        </div>
-      </div>
+    <nz-form-item>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7" nzRequired>pais</nz-form-label>
 
-    </div>
-<div class="row">
-  <div class="col-md-6">
- <div class="col-md-5 pr-1">
-        <div class="form-group">
-          <label>fecha alta</label>
-          <input type="text" class="form-control" placeholder="Fecha alta" value="10/10/2023">
-        </div>
-      </div>
+        <input nz-input formControlName="nit" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
 
-      <div class="col-md-5 pr-1">
-        <div class="form-group">
-          <label>usuario que le dio el alta</label>
-          <input type="text" class="form-control" placeholder="Usuario alta" value="juan peres">
-        </div>
-      </div>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7" nzRequired>ciudad</nz-form-label>
 
+        <input nz-input formControlName="pais" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
 
-  </div>
-  <div class="col-md-6">
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7" nzRequired>direccion</nz-form-label>
 
+        <input nz-input formControlName="ciudad" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
 
-  </div>
+    <nz-form-item>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7" nzRequired
+          >Numero de domicilio</nz-form-label
+        >
 
+        <input nz-input formControlName="nro" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
 
-      <div  class="row  " style="margin: 10px; ">
-        <div class="update ml-auto mr-auto col-2">
-          <button type="submit" class="btn btn-success btn-round">guardar nuevo accionista</button>
-        </div>
-        <div class="update ml-auto mr-auto col-2  " >
-          <button type="submit" class="btn btn-warning btn-round" >cancelar</button>
-        </div>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7" nzRequired>Piso</nz-form-label>
 
-      </div>
-    </div>
-    </form>
-  </div>
-</div>
+        <input nz-input formControlName="piso" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7" nzRequired>Departamento</nz-form-label>
+
+        <input nz-input formControlName="dpto" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control
+        [nzSpan]="12"
+        nzHasFeedback
+        nzValidatingTip="Validating..."
+        [nzErrorTip]="userErrorTpl"
+      >
+        <nz-form-label [nzSpan]="7" nzRequired>Telefono</nz-form-label>
+
+        <input nz-input formControlName="telefono" placeholder="Nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')"
+            >El campo no puede estar vacio!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('duplicated')"
+            >Este campo es requerido!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+        <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+
+        <input
+          nz-input
+          formControlName="email"
+          placeholder="email"
+          type="email"
+        />
+        <ng-template #emailErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('email')"
+            >The input is not valid E-mail!</ng-container
+          >
+          <ng-container *ngIf="control.hasError('required')"
+            >Please input your E-mail!</ng-container
+          >
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-control [nzSpan]="12" nzHasFeedback>
+      <nz-form-label [nzSpan]="7" nzRequired>Tipo de Accionista</nz-form-label>
+      <nz-select name="select-error" [ngModel]="'Option 1'">
+        <nz-option nzValue="Option 1" nzLabel="Option 1"></nz-option>
+        <nz-option nzValue="Option 2" nzLabel="Option 2"></nz-option>
+      </nz-select>
+    </nz-form-control>
+
+    <!-- <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Please input your password!">
+      <input nz-input type="password" formControlName="password" (ngModelChange)="validateConfirmPassword()" />
+    </nz-form-control>
+  </nz-form-item>
+   -->
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <button nz-button nzType="primary" [disabled]="!validateForm.valid">
+        Submit
+      </button>
+      <button nz-button (click)="resetForm($event)">Reset</button>
+    </nz-form-control>
+  </form>
+</nz-card>

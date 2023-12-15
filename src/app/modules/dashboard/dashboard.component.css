@@ -13,12 +13,18 @@
 
 
 nz-header {
-  background:#C0FEFF  ;
+  background:#FFFFFF  ;
   padding: 0;
+  height: 70px;
+  border-bottom: 1px solid #b6b6b6;
+}
+nz-sider{
+  border-right: 1px solid #c0c0c0;
 }
 
 nz-content {
-  margin: 3px;
+  margin: 6px;
+
 }
 
 nz-breadcrumb {
@@ -48,15 +54,34 @@ nz-layout {
 } */
 
 .logo {
-  height: 72px;
-
-  margin: 16px;
+  height: 70px;
+background-color:#FFFFFF ;
+border-bottom: 1px solid #b6b6b6;
 }
 
-img {
-margin: 8px;
-  max-width: 100%;
+.collapsed-logo {
+  width: 100px;  /* ajusta el ancho según tus necesidades */
+  height: auto; /* mantiene la proporción original */
+  display: block; /* Hace que la imagen sea un bloque para poder centrarla horizontalmente */
+  margin-left: 9px;
+  position: absolute;
+  top: 10px; /* Ajusta la posición vertical hacia arriba según tus necesidades */
+  left: 50%; /* Para centrar la imagen horizontalmente */
+  transform: translateX(-55%);
+
+}
+
+.expanded-logo {
+  width: 200px; /* ajusta el ancho según tus necesidades */
+  height: auto; /* mantiene la proporción original */
+  display: block; /* Hace que la imagen sea un bloque para poder centrarla horizontalmente */
+  margin-left: 9px;
+  position: absolute;
+  top: -10px; /* Ajusta la posición vertical hacia arriba según tus necesidades */
+  left: 50%; /* Para centrar la imagen horizontalmente */
+  transform: translateX(-50%);
+}
+/* max-width: 100%;
   max-height: 100%;
   height: auto;
-  width: auto;
-}
+  width: auto; */

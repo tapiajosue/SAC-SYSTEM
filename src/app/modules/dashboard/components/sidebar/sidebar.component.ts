@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   theme = true;
 
+  userAvatar = 'assets/logo_azul.png'; // Reemplaza con la URL de la imagen del usuario
+  userName = '       Name-User'; // Reemplaza con el nombre del usuario
+
 }
+

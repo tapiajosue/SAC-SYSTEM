@@ -1,14 +1,15 @@
-<ul nz-menu nzMode="inline" nzTheme="dark" style="background-color: #1a468d">
-  <!-- <li
-    nz-menu-item
-    nz-tooltip
-    nzTooltipPlacement="right"
-    nzSelected
-    routerLink="home"
-  >
-    <span nz-icon nzType="home" nzTheme="outline"></span>
-    <span> <strong> Home </strong></span>
-  </li> -->
+
+<ul nz-menu nzMode="inline" >
+  <li nz-menu-item
+  nzTitle="Perfil"
+  nzIcon="user"
+  nz-dropdown>
+      <nz-avatar [nzSrc]="userAvatar" nzSize="small" class="avatar"></nz-avatar>
+      <span ><strong>{{ userName }}</strong></span>
+
+
+
+  </li>
 
   <li
     nz-menu-item
@@ -17,7 +18,7 @@
     nzIcon="usergroup-add"
   >
     <span nz-icon nzType="usergroup-add" nzTheme="outline"></span>
-    <span><strong> Accionistas </strong></span>
+    <span> Accionistas </span>
   </li>
 
   <li
@@ -27,11 +28,11 @@
     nzIcon="files"
   >
     <i nz-icon nzType="file" nzTheme="outline"></i>
-    <span> <strong>Titulos</strong>  </span>
+    <span> Titulos </span>
   </li>
 
   <li nz-submenu nzTitle="Dividendos" nzIcon="appstore">
-    <ul style="background-color: #1a468d">
+    <ul>
       <li nz-menu-item>Generacion de dividendos</li>
       <li nz-menu-item>pago de dividendos</li>
       <li nz-menu-item>parte de dividendos</li>

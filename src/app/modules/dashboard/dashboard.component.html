@@ -1,13 +1,16 @@
 <nz-layout>
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" style="background-color:#1A468D;">
+
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" style="background-color:#FFFFFF;">
     <div class="logo" >
-      <img src="assets/logo-elfec1.png" alt="">
+      <img [src]="isCollapsed ? 'assets/logo-2.png' : 'assets/logo-3.png'"
+             [ngClass]="{'collapsed-logo': isCollapsed, 'expanded-logo': !isCollapsed}" alt="">
+
     </div>
     <app-sidebar></app-sidebar>
   </nz-sider>
+
+
   <nz-layout>
-
-
     <nz-header>
       <i
         class="trigger"
@@ -18,13 +21,14 @@
     </i>
     </nz-header>
 
-    <nz-content>
 
+    <nz-content >
       <router-outlet></router-outlet>
     </nz-content>
 
     <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
   </nz-layout>
+
 </nz-layout>
 
 

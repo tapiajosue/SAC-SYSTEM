@@ -8,6 +8,9 @@ import {
   CrudPageComponent,
 } from './pages/admin-acc/components/crud-page/crud-page.component';
 import {
+  NewCrudPageComponent,
+} from './pages/admin-acc/components/new-crud-page/new-crud-page.component';
+import {
   ShareholdersPageComponent,
 } from './pages/shareholders-page/shareholders-page.component';
 import { TypeStateComponent } from './pages/type-state/type-state.component';
@@ -26,6 +29,7 @@ const routes: Routes = [
 
        //no funciono cargar la pagina asi
        {path: 'crudpage', component:CrudPageComponent},
+       {path: 'newcrud', component:NewCrudPageComponent},
        {path: '**', redirectTo:''}
      ]
    },
